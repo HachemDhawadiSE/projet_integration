@@ -27,31 +27,126 @@ class _ProfilState extends State<Profil> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        //backgroundColor: Colors.blue[50],
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      //backgroundColor: Colors.blue[50],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Signed in as ' + user.email!),
-            SizedBox(
-              height: 2,
+            CircleAvatar(
+              backgroundImage: AssetImage(
+                "lib/images/men3.jpg",
+              ),
+              radius: 100,
             ),
-            IconButton(
-                onPressed: () {
-                  signOut();
-                  //FirebaseAuth.instance.signOut();
-                },
-                icon: Icon(
-                  Icons.logout,
-                  size: 30,
-                )),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("accueil");
+              },
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+                  primary: Colors.blueGrey,
+                  shape: StadiumBorder()),
+              icon: Icon(
+                Icons.account_circle,
+                size: 35,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              label: Text(
+                'Signed in as ' + user.email!,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("forgetpass");
+              },
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 90, vertical: 5),
+                  primary: Colors.blueGrey,
+                  shape: StadiumBorder()),
+              icon: Icon(
+                Icons.lock_reset,
+                size: 35,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              label: Text(
+                "Forget Password",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("accueil");
+              },
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 90, vertical: 5),
+                  primary: Colors.blueGrey,
+                  shape: StadiumBorder()),
+              icon: Icon(
+                Icons.help_outline,
+                size: 35,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              label: Text(
+                "Help",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                signOut();
+              },
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+                  primary: Colors.blueGrey,
+                  shape: StadiumBorder()),
+              icon: Icon(
+                Icons.logout,
+                size: 32,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              label: Text(
+                "Sign Out",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
           ],
-        )),
-      );
+        ),
+      ));
+
   signOut() async {
     await FirebaseAuth.instance.signOut();
     Navigator.pushAndRemoveUntil(context,

@@ -10,6 +10,7 @@ import 'package:login_page/intro/intro_page_1.dart';
 import 'package:login_page/intro/intro_page_2.dart';
 import 'package:login_page/intro/intro_page_3.dart';
 import 'package:login_page/intro/selfpage.dart';
+import 'package:login_page/model/post_list.dart';
 import 'package:login_page/news/mytab.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -33,15 +34,15 @@ class _NewsState extends State<News> {
   List<Widget> myTabs = const [
     //reunion
     MyTab(
-      iconPath: 'lib/images/news.png',
+      iconPath: 'lib/images/worldwide.png',
     ),
     //world
     MyTab(
-      iconPath: 'lib/images/profits.png',
+      iconPath: 'lib/images/user.png',
     ),
     //micro
     MyTab(
-      iconPath: 'lib/images/company.png',
+      iconPath: 'lib/images/event.png',
     ),
   ];
 
@@ -52,14 +53,14 @@ class _NewsState extends State<News> {
           //backgroundColor: tdBGColor,
           //backgroundColor: Colors.blue[50],
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.blueGrey,
             elevation: 0,
             leading: Padding(
               padding: EdgeInsets.only(left: 24.0, right: 55),
               child: IconButton(
                 icon: Icon(
                   Icons.menu,
-                  color: Colors.grey[800],
+                  color: Colors.blueGrey[800],
                   size: 30,
                 ),
                 onPressed: () {
@@ -70,7 +71,8 @@ class _NewsState extends State<News> {
             title: Text(
               "   NEWS FOR TODAY",
               style: TextStyle(
-                  fontSize: 25, color: Color.fromARGB(255, 136, 132, 132)),
+                fontSize: 25,
+              ),
             ),
             actions: [
               Padding(
@@ -78,7 +80,7 @@ class _NewsState extends State<News> {
                 child: IconButton(
                   icon: Icon(
                     Icons.notifications,
-                    color: Colors.grey[800],
+                    color: Colors.blueGrey[800],
                     size: 30,
                   ),
                   onPressed: () {
@@ -91,14 +93,14 @@ class _NewsState extends State<News> {
           body: Column(
             children: [
               const SizedBox(
-                height: 14,
+                height: 12,
               ),
               TabBar(tabs: myTabs),
               //tab bar view
               Expanded(
                   child: TabBarView(children: [
                 //world page
-                WorldTab(),
+                PostList(),
                 //moneypage
                 MoneyTab(),
                 //company page

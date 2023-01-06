@@ -21,9 +21,11 @@ class IntroPage2 extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Image.asset(
-                "lib/images/login.gif",
+                "lib/images/tt.png",
                 height: 430,
               ),
               Text(

@@ -144,8 +144,7 @@ class _ForgetpassState extends State<Forgetpass> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 55, 152, 243),
-                            shape: StadiumBorder()),
+                            primary: Colors.blueGrey, shape: StadiumBorder()),
                         icon: Icon(
                           Icons.forward_to_inbox,
                           size: 25,

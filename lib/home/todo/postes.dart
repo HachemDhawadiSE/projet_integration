@@ -197,6 +197,7 @@ class _PostesState extends State<Postes> {
   Widget build(BuildContext) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blueGrey,
         onPressed: () {
           _create();
         },
@@ -224,7 +225,7 @@ class _PostesState extends State<Postes> {
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.blue[50],
+                              color: Color.fromARGB(255, 240, 238, 238),
                               borderRadius:
                                   BorderRadius.circular(borderRadius)),
                           child: Column(
@@ -238,12 +239,23 @@ class _PostesState extends State<Postes> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  'lib/images/men3.jpg'),
+                                              fit: BoxFit.fill),
+                                        ),
+                                      ),
+                                      Container(
                                           padding: EdgeInsets.all(12),
                                           child: Text(
                                             // user.email!,
                                             documentSnapshot['userpost'] + ' :',
                                             style: TextStyle(
-                                                color: Colors.blue[800],
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 15),
                                           )),
@@ -254,28 +266,29 @@ class _PostesState extends State<Postes> {
                                     children: [
                                       Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.blue[100],
+                                            color: Color.fromARGB(
+                                                255, 218, 218, 218),
                                             borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(
                                                     borderRadius),
                                                 topRight: Radius.circular(
                                                     borderRadius)),
                                           ),
-                                          padding: EdgeInsets.all(12),
+                                          padding: EdgeInsets.all(10),
+                                          margin: EdgeInsets.only(bottom: 14),
                                           child: Text(
                                             documentSnapshot['datepost'],
                                             style: TextStyle(
-                                                color: Colors.blue[800],
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15),
+                                                fontSize: 11),
                                           )),
                                     ],
                                   ),
                                 ],
                               ),
                               Container(
-                                margin: EdgeInsets.only(
-                                    top: 10, left: 15, right: 15, bottom: 8),
+                                margin: EdgeInsets.all(10),
                                 child: Text(
                                   documentSnapshot['descriptionpost'],
                                   style: TextStyle(
@@ -284,26 +297,53 @@ class _PostesState extends State<Postes> {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Container(
-                                          margin: EdgeInsets.only(left: 25),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 250, 89, 142),
-                                          ))
+                                        margin: EdgeInsets.only(
+                                            left: 10, bottom: 10),
+                                        child: ElevatedButton.icon(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.thumb_up,
+                                            size: 20,
+                                          ),
+                                          label: Text("like"),
+                                          style: ElevatedButton.styleFrom(
+                                            textStyle: TextStyle(fontSize: 12),
+                                            backgroundColor: Colors.blueGrey,
+                                          ),
+                                        ),
+                                      )
                                     ],
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Container(
-                                          margin: EdgeInsets.only(right: 15),
+                                        margin: EdgeInsets.only(
+                                            left: 10, bottom: 10),
+                                        child: ElevatedButton.icon(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.chat_bubble,
+                                            size: 20,
+                                          ),
+                                          label: Text("comment"),
+                                          style: ElevatedButton.styleFrom(
+                                            textStyle: TextStyle(fontSize: 12),
+                                            backgroundColor: Colors.blueGrey,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                          margin: EdgeInsets.only(left: 123),
                                           child: IconButton(
                                               onPressed: () =>
                                                   showDialog<String>(
@@ -369,7 +409,7 @@ class _PostesState extends State<Postes> {
                                                 color: Colors.red,
                                               ))),
                                     ],
-                                  ),
+                                  )
                                 ],
                               )
                               //love icon + add button

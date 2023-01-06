@@ -6,33 +6,13 @@ class CompanyTab extends StatelessWidget {
   List companynews = [
     // [ donutFlavor, donutPrice, donutColor, imageName ]
     [
-      "Pdf",
-      "lib/images/pdf.png",
+      "birthday",
+      "lib/images/birthday.png",
       "06/09/2022",
     ],
     [
-      "Pdf",
-      "lib/images/mp4.png",
-      "06/09/2022",
-    ],
-    [
-      "Pdf",
-      "lib/images/mp3.png",
-      "06/09/2022",
-    ],
-    [
-      "Pdf",
-      "lib/images/photo.png",
-      "06/09/2022",
-    ],
-    [
-      "Pdf",
-      "lib/images/pdf.png",
-      "06/09/2022",
-    ],
-    [
-      "Pdf",
-      "lib/images/pdf.png",
+      "Speech",
+      "lib/images/reunion.png",
       "06/09/2022",
     ],
   ];
@@ -43,8 +23,8 @@ class CompanyTab extends StatelessWidget {
       itemCount: companynews.length,
       padding: EdgeInsets.all(12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 1.04 / 1.12,
+        crossAxisCount: 1,
+        childAspectRatio: 1.04 / 0.6,
       ),
       itemBuilder: (context, index) {
         return CompanyTitle(

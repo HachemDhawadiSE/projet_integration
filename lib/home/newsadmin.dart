@@ -18,7 +18,6 @@ import '../newstab/moneytab.dart';
 import '../newstab/worldtab.dart';
 import 'package:login_page/news/mytab.dart';
 
-
 class NewsAdmin extends StatefulWidget {
   NewsAdmin({Key? key}) : super(key: key);
 
@@ -34,15 +33,15 @@ class _NewsAdminState extends State<NewsAdmin> {
   List<Widget> myTabs = const [
     //reunion
     MyTab(
-      iconPath: 'lib/images/news.png',
+      iconPath: 'lib/images/worldwide.png',
     ),
     //world
     MyTab(
-      iconPath: 'lib/images/profits.png',
+      iconPath: 'lib/images/user.png',
     ),
     //micro
     MyTab(
-      iconPath: 'lib/images/company.png',
+      iconPath: 'lib/images/event.png',
     ),
   ];
 

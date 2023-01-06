@@ -57,6 +57,9 @@ dependencies:
   overlay_support: ^2.0.1
   flutter_slidable: ^2.0.0
   flutter_staggered_grid_view: ^0.4.0
+  snippet_coder_utils: ^1.0.12
+  image_picker: ^0.8.6
+  dio: ^4.0.6
 
  
 

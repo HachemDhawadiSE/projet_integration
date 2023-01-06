@@ -179,13 +179,13 @@ class _WorldTabState extends State<WorldTab> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _dateController = TextEditingController();
-  final double borderRadius = 12;
+  final double borderRadius = 2;
 
   @override
   Widget build(BuildContext) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blueGrey,
         onPressed: () {
           _create();
         },
@@ -213,7 +213,7 @@ class _WorldTabState extends State<WorldTab> {
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.blue[50],
+                              color: Color.fromARGB(255, 240, 238, 238),
                               borderRadius:
                                   BorderRadius.circular(borderRadius)),
                           child: Column(
@@ -227,12 +227,23 @@ class _WorldTabState extends State<WorldTab> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  'lib/images/men3.jpg'),
+                                              fit: BoxFit.fill),
+                                        ),
+                                      ),
+                                      Container(
                                           padding: EdgeInsets.all(12),
                                           child: Text(
                                             // user.email!,
                                             documentSnapshot['userpost'] + ' :',
                                             style: TextStyle(
-                                                color: Colors.blue[800],
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 15),
                                           )),
@@ -243,20 +254,22 @@ class _WorldTabState extends State<WorldTab> {
                                     children: [
                                       Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.blue[100],
+                                            color: Color.fromARGB(
+                                                255, 218, 218, 218),
                                             borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(
                                                     borderRadius),
                                                 topRight: Radius.circular(
                                                     borderRadius)),
                                           ),
-                                          padding: EdgeInsets.all(12),
+                                          padding: EdgeInsets.all(10),
+                                          margin: EdgeInsets.only(bottom: 14),
                                           child: Text(
                                             documentSnapshot['datepost'],
                                             style: TextStyle(
-                                                color: Colors.blue[800],
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15),
+                                                fontSize: 11),
                                           )),
                                     ],
                                   ),
@@ -272,21 +285,47 @@ class _WorldTabState extends State<WorldTab> {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Container(
-                                          margin: EdgeInsets.only(
-                                              left: 330, bottom: 10),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 250, 89, 142),
-                                          ))
+                                        margin: EdgeInsets.only(
+                                            left: 10, bottom: 10),
+                                        child: ElevatedButton.icon(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.thumb_up,
+                                            size: 20,
+                                          ),
+                                          label: Text("like"),
+                                          style: ElevatedButton.styleFrom(
+                                            textStyle: TextStyle(fontSize: 12),
+                                            backgroundColor: Colors.blueGrey,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            left: 10, bottom: 10),
+                                        child: ElevatedButton.icon(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.chat_bubble,
+                                            size: 20,
+                                          ),
+                                          label: Text("comment"),
+                                          style: ElevatedButton.styleFrom(
+                                            textStyle: TextStyle(fontSize: 12),
+                                            backgroundColor: Colors.blueGrey,
+                                          ),
+                                        ),
+                                      )
                                     ],
                                   ),
                                 ],

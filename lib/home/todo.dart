@@ -87,11 +87,12 @@ class _ToDoState extends State<ToDo> {
           //_create();
         },
         child: const Icon(Icons.add),
+        backgroundColor: Colors.blueGrey,
       ),
       backgroundColor: tdBGColor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: tdBGColor,
+        backgroundColor: Colors.blueGrey,
         title:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Icon(
@@ -101,7 +102,7 @@ class _ToDoState extends State<ToDo> {
           ),
           Text(
             "List of Activitiés",
-            style: TextStyle(fontSize: 30, color: Colors.grey),
+            style: TextStyle(fontSize: 30, color: Colors.white),
           ),
           Container(
             height: 40,

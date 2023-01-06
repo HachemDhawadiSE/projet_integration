@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+class ShowDialogue {
+  void showSuccesDialog({
+    required String title,
+    required int messageCode,
+    required String content,
+    required Icon icons,
+  }) {
+    (BuildContext context) => new AlertDialog(
+          title: new Text(title),
+          content: new Text(content),
+          actions: <Widget>[
+            new IconButton(
+                icon: icons,
+                onPressed: () {
+                  Navigator.pop(context);
+                })
+          ],
+        );
+  }
+
+    void showErrorDialog({
+    required String title,
+    required int messageCode,
+    required String content,
+    required Icon icons,
+  }) {
+    (BuildContext context) => new AlertDialog(
+          title: new Text(title),
+          content: new Text(content),
+          actions: <Widget>[
+            new IconButton(
+                icon: icons,
+                onPressed: () {
+                  Navigator.pop(context);
+                })
+          ],
+        );
+  }
+}

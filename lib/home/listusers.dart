@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:login_page/auth/login.dart';
-import 'package:login_page/home/homepage.dart';
-import 'package:login_page/intro/intro_page_1.dart';
-import 'package:login_page/intro/intro_page_2.dart';
-import 'package:login_page/intro/intro_page_3.dart';
-import 'package:login_page/intro/selfpage.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class ListUsers extends StatefulWidget {
   ListUsers({Key? key}) : super(key: key);
@@ -27,11 +17,6 @@ class _ListUsersState extends State<ListUsers> {
   final CollectionReference _products =
       FirebaseFirestore.instance.collection('products');
 
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _cinController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _dateController = TextEditingController();
   final user = FirebaseAuth.instance.currentUser!;
   PageController _controller = PageController();
@@ -164,9 +149,10 @@ class _ListUsersState extends State<ListUsers> {
                                                 actions: <Widget>[
                                                   ElevatedButton.icon(
                                                     onPressed: () {
-                                                      /* _delete(
-                                                        documentSnapshot.id);
-                                                    Navigator.of(context).pop();*/
+                                                      _delete(
+                                                          documentSnapshot.id);
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     },
                                                     style: ElevatedButton
                                                         .styleFrom(

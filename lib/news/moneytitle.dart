@@ -28,7 +28,7 @@ class MoneyTitle extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: moneyColor[50],
+          color: moneyColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: Column(
@@ -38,22 +38,11 @@ class MoneyTitle extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                        padding: EdgeInsets.only(top: 4, left: 4),
-                        child: Icon(
-                          Icons.monetization_on,
-                          color: Color.fromARGB(255, 35, 173, 40),
-                        )),
-                  ],
-                ),
-                Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
                         decoration: BoxDecoration(
-                          color: moneyColor[100],
+                          color: moneyColor,
                           /*borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(borderRadius),
                                     topRight: Radius.circular(borderRadius)),*/
@@ -62,7 +51,7 @@ class MoneyTitle extends StatelessWidget {
                         child: Text(
                           moneyDate,
                           style: TextStyle(
-                              color: moneyColor[800],
+                              color: moneyColor,
                               fontWeight: FontWeight.bold,
                               fontSize: 14),
                         )),
@@ -90,15 +79,6 @@ class MoneyTitle extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 4),
-            Text(
-              '$moneygold\B \$',
-              style: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 12,
-                  decoration: TextDecoration.underline),
-            ),
-
             // love icon + add button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 42, vertical: 2),
@@ -122,20 +102,57 @@ class MoneyTitle extends StatelessWidget {
                         ),
                         onTap: () {},
                       )),
-                  updown =="up"
-                      ? Icon(
-                          FontAwesomeIcons.levelUpAlt,
-                          color: Colors.green,
-                          size: 18,
-                        )
-                      : Icon(
-                          FontAwesomeIcons.levelDownAlt,
-                          color: Colors.red,
-                          size: 18,
-                        ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 4,
+            ),
+            Row(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 10, bottom: 10),
+                      child: ElevatedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.done,
+                          size: 20,
+                        ),
+                        label: Text(""),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.only(left: 5),
+                          textStyle: TextStyle(fontSize: 12),
+                          backgroundColor: Colors.green,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 10, bottom: 10),
+                      child: ElevatedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.cancel,
+                          size: 20,
+                        ),
+                        label: Text(""),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.only(left: 5),
+                          textStyle: TextStyle(fontSize: 12),
+                          backgroundColor: Colors.red,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),

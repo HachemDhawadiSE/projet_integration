@@ -10,20 +10,20 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _cinController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final TextEditingController _nameController = TextEditingController();
+    final TextEditingController _ageController = TextEditingController();
+    final TextEditingController _cinController = TextEditingController();
+    final TextEditingController _emailController = TextEditingController();
+    final TextEditingController _passwordController = TextEditingController();
+    final TextEditingController _phoneController = TextEditingController();
+    @override
+    void dispose() {
+      _emailController.dispose();
+      _passwordController.dispose();
 
-    super.dispose();
-  }
+      super.dispose();
+    }
 
   var loading = false;
   @override
@@ -78,8 +78,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   TextFormField(
                     inputFormatters: <TextInputFormatter>[
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
@@ -104,8 +104,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   TextFormField(
                     controller: _emailController,
                     validator: (value) {
@@ -126,8 +126,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   /*SizedBox(
                     height: 10,
                   ),
@@ -158,8 +158,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   TextFormField(
                     controller: _ageController,
                     inputFormatters: <TextInputFormatter>[
@@ -184,8 +184,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   TextFormField(
                     controller: _phoneController,
                     inputFormatters: <TextInputFormatter>[
@@ -210,8 +210,8 @@ class _SignUpState extends State<SignUp> {
                             borderSide: BorderSide(width: 3))),
                   ),
                   SizedBox(
-            height: 10,
-          ),
+                    height: 10,
+                  ),
                   Container(
                     margin: EdgeInsets.all(3),
                     child: Row(
@@ -257,8 +257,7 @@ class _SignUpState extends State<SignUp> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 55, 152, 243),
-                          shape: StadiumBorder()),
+                          primary: Colors.blueGrey, shape: StadiumBorder()),
                       icon: Icon(
                         Icons.login,
                         size: 25,

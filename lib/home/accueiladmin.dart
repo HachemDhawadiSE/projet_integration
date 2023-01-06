@@ -74,9 +74,9 @@ class _AccueilAdminState extends State<AccueilAdmin> {
           child: CurvedNavigationBar(
             key: navigationkey,
             animationDuration: Duration(milliseconds: 400),
-            color: Colors.blueAccent,
-            backgroundColor: Colors.blueAccent,
-            buttonBackgroundColor: Colors.blueAccent,
+            color: Colors.blueGrey.shade400,
+            backgroundColor: Colors.blueGrey,
+            buttonBackgroundColor: Colors.blueGrey,
             index: index,
             height: 60,
             items: items,

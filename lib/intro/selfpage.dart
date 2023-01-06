@@ -27,7 +27,7 @@ class _SelfPageState extends State<SelfPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: tdBGColor,
+        backgroundColor: tdBGColor,
         //appBar: AppBar(),
         body: Stack(
           children: [
@@ -52,7 +52,7 @@ class _SelfPageState extends State<SelfPage> {
                           _controller.jumpToPage(2);
                         },
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.blueAccent, shape: StadiumBorder()),
+                            primary: Colors.blueGrey, shape: StadiumBorder()),
                         icon: Icon(
                           Icons.checklist,
                           size: 35,
@@ -72,8 +72,8 @@ class _SelfPageState extends State<SelfPage> {
                       controller: _controller,
                       count: 3,
                       effect: SwapEffect(
-                        activeDotColor: Color.fromARGB(255, 90, 144, 224),
-                        dotColor: Colors.deepPurple.shade100,
+                        activeDotColor: Colors.blueGrey,
+                        dotColor: Color.fromARGB(255, 169, 169, 170),
                         dotHeight: 20,
                         dotWidth: 20,
                       ),
@@ -116,7 +116,7 @@ class _SelfPageState extends State<SelfPage> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.blueAccent,
+                                  primary: Colors.blueGrey,
                                   shape: StadiumBorder()),
                               icon: Icon(
                                 Icons.done,
@@ -140,7 +140,7 @@ class _SelfPageState extends State<SelfPage> {
                                     curve: Curves.easeIn);
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.blueAccent,
+                                  primary: Colors.blueGrey,
                                   shape: StadiumBorder()),
                               icon: Icon(
                                 Icons.navigate_next,

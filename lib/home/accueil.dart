@@ -12,6 +12,7 @@ import 'package:login_page/intro/intro_page_1.dart';
 import 'package:login_page/intro/intro_page_2.dart';
 import 'package:login_page/intro/intro_page_3.dart';
 import 'package:login_page/intro/selfpage.dart';
+import 'package:login_page/model/post_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -28,12 +29,12 @@ class _AccueilState extends State<Accueil> {
   //final user = FirebaseAuth.instance.currentUser!;
   PageController _controller = PageController();
   bool onLastPage = false;
-  int index = 0;
+  int index = 2;
   final screens = [
     SelfPage(),
     ToDo(),
     News(),
-    Chat(),
+    PostList(),
     Profil(),
   ];
   final navigationkey = GlobalKey<CurvedNavigationBarState>();
@@ -71,9 +72,9 @@ class _AccueilState extends State<Accueil> {
           child: CurvedNavigationBar(
             key: navigationkey,
             animationDuration: Duration(milliseconds: 400),
-            color: Colors.blueAccent,
-            backgroundColor: Colors.blueAccent,
-            buttonBackgroundColor: Colors.blueAccent,
+            color: Colors.blueGrey.shade400,
+            backgroundColor: Colors.blueGrey,
+            buttonBackgroundColor: Colors.blueGrey,
             index: index,
             height: 60,
             items: items,

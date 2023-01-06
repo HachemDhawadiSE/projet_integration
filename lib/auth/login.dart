@@ -234,7 +234,7 @@ class _LoginState extends State<Login> {
                                 //.pushReplacementNamed("accueil");
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 55, 152, 243),
+                                  primary: Colors.blueGrey,
                                   shape: StadiumBorder()),
                               icon: Icon(
                                 Icons.login,
@@ -376,8 +376,6 @@ class _LoginState extends State<Login> {
   }
 
   Future signIn() async {
-    //try {
-    //} on FirebaseAuthException catch (e) {}
     showDialog(
       context: context,
       builder: (context) {
@@ -394,25 +392,9 @@ class _LoginState extends State<Login> {
 
       Navigator.of(context).pop();
       if (Navigator.canPop(context)) {
-        /*Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-              (route) => false);*/
-        //Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
-        // print("user login");
-        //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: contex), (route) => false)
-        //Navigator.popUntil(context, ModalRoute.withName("homepage"));
-        //Navigator.of(context).pushReplacementNamed("homepage");
-        //return Navigator.popUntil(context, ModalRoute.withName("homepage"));
-        /*MaterialPageRoute(
-          builder: (context) {
-            return HomePage();
-          },
-        );*/
       } else {
         print("user ghalet login");
       }
-      //Navigator.of(context).pop();
     } catch (e) {
       Navigator.of(context).pop();
       showDialog<String>(
@@ -443,8 +425,6 @@ class _LoginState extends State<Login> {
         ),
       );
     }
-
-    //navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
   Future signIn2() async {

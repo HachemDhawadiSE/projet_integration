@@ -96,7 +96,7 @@ class CompanyTitle extends StatelessWidget {
                   // plus button
                   Container(
                       margin: EdgeInsets.only(
-                        left: 18,
+                        left: 100,
                       ),
                       child: InkWell(
                         child: Text(

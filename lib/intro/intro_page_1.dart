@@ -23,7 +23,7 @@ class IntroPage1 extends StatelessWidget {
                 height: 10,
               ),
               Image.asset(
-                "lib/images/Shared-workspace.gif",
+                "lib/images/team2.png",
                 height: 450,
               ),
               Text(

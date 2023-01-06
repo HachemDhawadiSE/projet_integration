@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:login_page/auth/google_sign_in.dart';
 import 'package:login_page/auth/login.dart';
 import 'package:login_page/auth/signup.dart';
@@ -21,18 +19,16 @@ import 'package:login_page/home/profil.dart';
 import 'package:login_page/home/todo.dart';
 import 'package:login_page/home/todo/postes.dart';
 import 'package:login_page/intro/selfpage.dart';
+import 'package:login_page/model/post_add_edit.dart';
+import 'package:login_page/model/post_list.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  //int hive
- //Hive.initFlutter();
-  //open box
-  //var box = await Hive.openBox("mybox");
-
-  /*await Firebase.initializeApp(
+  
+ /* await Firebase.initializeApp(
         // Replace with actual values
         options: const FirebaseOptions(
           apiKey: "AIzaSyBzH7d8F0twppcwBlkz9mCba2xMVjxdkGY",
@@ -41,7 +37,13 @@ void main() async {
           projectId: "crudfirestore-5f32a",
         ),
       );*/
+  //await await di.init();
   runApp(MyApp());
+  //int hive
+  //Hive.initFlutter();
+  //open box
+  //var box = await Hive.openBox("mybox");
+
 }
 
 class MyApp extends StatelessWidget {
@@ -74,6 +76,8 @@ class MyApp extends StatelessWidget {
               "profil": (context) => Profil(),
               "postes": (context) => Postes(),
               "newsadmin": (context) => NewsAdmin(),
+              "postslist": (context) => PostList(),
+              "postaddedit": (context) => PostAddEdit(),
             },
           ),
         ),
